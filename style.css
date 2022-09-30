@@ -1,15 +1,33 @@
+:root{
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
     color: white;
-    background-color: hsl(216, 12%, 8%);
+    background-color: var(--very-dark-blue);
+    font-family: 'Overpass', sans-serif;
 }
 
 main{
-    background-color: hsl(213, 19%, 18%);
+    background: rgb(25,28,35);
+    background: linear-gradient(360deg, rgba(25,28,35,1) 33%, rgba(35,42,52,1) 100%);
     width: 80%;
     border-radius: 1.125rem;
     padding: 1.25rem;
     margin: 0 auto;
-    max-width: 20rem;
+    max-width: 18rem;
+    min-height: 20rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,4 +36,58 @@ main{
 
 .hidden{
     display: none;
+}
+
+.logo-container{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-container img{
+    aspect-ratio: 1/1;
+    height: 1rem;
+}
+
+p{
+    color: var(--light-grey);
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate-btn{
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    color: var(--medium-grey);
+    font-weight: 700;
+    background-color: var(--dark-blue);
+}
+
+#submit-btn{
+    margin: 0 auto;
+    width: 100%;
+    background-color: var(--orange);
+    color: white;
+    font-size: 1.125em;
+    border-radius: 1.5rem;
+    min-height: 3rem;
+}
+
+.rate-panel{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    min-height: 20rem;
 }
