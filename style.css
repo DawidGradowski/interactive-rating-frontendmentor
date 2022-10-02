@@ -26,8 +26,8 @@ main{
     border-radius: 1.125rem;
     padding: 1.25rem;
     margin: 0 auto;
-    max-width: 18rem;
-    min-height: 20rem;
+    max-width: 21rem;
+    min-height: 21rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,9 +35,22 @@ main{
 }
 
 .hidden{
-    display: none;
+    display: none!important;
 }
 
+p{
+    color: var(--light-grey);
+}
+
+.rating-panel, .thanks-panel{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    min-height: 21rem;
+}
+
+/* ===== RATING PANEL ==== */
 .logo-container{
     width: 3rem;
     height: 3rem;
@@ -54,9 +67,6 @@ main{
     height: 1rem;
 }
 
-p{
-    color: var(--light-grey);
-}
 
 ul{
     list-style: none;
@@ -74,6 +84,17 @@ ul{
     background-color: var(--dark-blue);
 }
 
+.rate-btn:hover{
+    background-color: var(--orange);
+    color: white;
+    cursor: pointer;
+}
+
+.current-rating, .rate-btn:active{
+    background-color: var(--light-grey);
+    color: white;
+}
+
 #submit-btn{
     margin: 0 auto;
     width: 100%;
@@ -84,10 +105,68 @@ ul{
     min-height: 3rem;
 }
 
-.rate-panel{
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    justify-content: space-around;
-    min-height: 20rem;
+#submit-btn:hover{
+    color: var(--orange);
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* ==== THANKS PANEL ==== */
+
+.thanks-panel h1, .thanks-panel p{
+    text-align: center;
+}
+
+.thanks-panel p{
+    font-size: 0.925em;
+    line-height: 1.5rem;
+}
+
+.thanks-panel img{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.rating-text{
+    color: var(--orange);
+    background-color: var(--dark-blue);
+    font-size: 0.875em;
+    letter-spacing: 0.1rem;
+    line-height: 2rem !important;
+    margin: 0 auto;
+    min-height: 2rem;
+    padding: 0 1rem;
+    width: fit-content;
+    border-radius: 1rem;
+}
+
+.disappear{
+    animation-name: disappear;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.show{
+    animation-name: show;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes disappear {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
 }
