@@ -1,13 +1,172 @@
+:root{
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
     color: white;
-    background-color: hsl(216, 12%, 8%);
+    background-color: var(--very-dark-blue);
+    font-family: 'Overpass', sans-serif;
 }
 
 main{
-    background-color: hsl(213, 19%, 18%);
+    background: rgb(25,28,35);
+    background: linear-gradient(360deg, rgba(25,28,35,1) 33%, rgba(35,42,52,1) 100%);
     width: 80%;
     border-radius: 1.125rem;
     padding: 1.25rem;
     margin: 0 auto;
-    max-width: 20rem;
+    max-width: 21rem;
+    min-height: 21rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden{
+    display: none!important;
+}
+
+p{
+    color: var(--light-grey);
+}
+
+.rating-panel, .thanks-panel{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    min-height: 21rem;
+}
+
+/* ===== RATING PANEL ==== */
+.logo-container{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-container img{
+    aspect-ratio: 1/1;
+    height: 1rem;
+}
+
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate-btn{
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    color: var(--medium-grey);
+    font-weight: 700;
+    background-color: var(--dark-blue);
+}
+
+.rate-btn:hover{
+    background-color: var(--orange);
+    color: white;
+    cursor: pointer;
+}
+
+.current-rating, .rate-btn:active{
+    background-color: var(--light-grey);
+    color: white;
+}
+
+#submit-btn{
+    margin: 0 auto;
+    width: 100%;
+    background-color: var(--orange);
+    color: white;
+    font-size: 1.125em;
+    border-radius: 1.5rem;
+    min-height: 3rem;
+}
+
+#submit-btn:hover{
+    color: var(--orange);
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* ==== THANKS PANEL ==== */
+
+.thanks-panel h1, .thanks-panel p{
+    text-align: center;
+}
+
+.thanks-panel p{
+    font-size: 0.925em;
+    line-height: 1.5rem;
+}
+
+.thanks-panel img{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.rating-text{
+    color: var(--orange);
+    background-color: var(--dark-blue);
+    font-size: 0.875em;
+    letter-spacing: 0.1rem;
+    line-height: 2rem !important;
+    margin: 0 auto;
+    min-height: 2rem;
+    padding: 0 1rem;
+    width: fit-content;
+    border-radius: 1rem;
+}
+
+.disappear{
+    animation-name: disappear;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.show{
+    animation-name: show;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes disappear {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
 }
